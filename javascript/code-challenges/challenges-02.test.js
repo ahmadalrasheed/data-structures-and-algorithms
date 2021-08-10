@@ -12,7 +12,7 @@ const raisedToTheThird = (arr) => {
   let newarr=[];
   arr.forEach(element=>{
     newarr.push(Math.pow(element,3));
-  })
+  });
   return newarr;
 
 };
@@ -20,14 +20,14 @@ const raisedToTheThird = (arr) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named addOne that, given an array of numbers, uses map to return a new array with each value simply incremented by 1. 
+Write a function named addOne that, given an array of numbers, uses map to return a new array with each value simply incremented by 1.
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
   let newarr=[];
   arr.map(element=>{
-    newarr.push(element+1)
-  })
+    newarr.push(element+1);
+  });
   return newarr;
 };
 
@@ -40,9 +40,9 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 const addQuestion = (arr) => {
   let newarr=[];
   arr.map(item=>{
-    newarr.push(item+'?')
-  })
-  return newarr
+    newarr.push(item+'?');
+  });
+  return newarr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -61,7 +61,7 @@ const forLoopTwoToThe = (arr) => {
     newarr.push(Math.pow(2,arr[i]));
   }
   return newarr;
-  
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -73,8 +73,8 @@ Write a function named forEachTwoToThe that produces the same output as your for
 const forEachTwoToThe = (arr) => {
   let newarr=[];
   arr.forEach(item=>{
-    newarr.push(Math.pow(2,item))
-  })
+    newarr.push(Math.pow(2,item));
+  });
   return newarr;
 };
 
@@ -87,8 +87,8 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 const mapTwoToThe = (arr) => {
   let newarr=[];
   arr.map(item=>{
-    newarr.push(Math.pow(2,item))
-  })
+    newarr.push(Math.pow(2,item));
+  });
   return newarr;
 };
 
