@@ -8,6 +8,7 @@ Write a function named returnTen, takes in a string and uses split and splice to
 ------------------------------------------------------------------------------------------------ */
 
 function returnTen(str){
+
   return str.split('').splice(-10);
 }
 
@@ -26,16 +27,34 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
-  let max = matrix[0][0];
-  for (let i = 0; i <= matrix.length - 1; i++) {
-    for (let j = 0; j <= matrix[i].length - 1; j++) {
-      if (max < matrix[i][j])
-        max = matrix[i][j];
+  let acc=0;
+  matrix.map(item=>{
+    for(let i=0;i<item.length;i++){
+      if(item[i]>acc){
+        acc=item[i];
+      }
     }
-  }
-  return max;
+  });
+  return acc;
+
+  // let max = matrix[0][0];
+  // for (let i = 0; i <= matrix.length - 1; i++) {
+  //   for (let j = 0; j <= matrix[i].length - 1; j++) {
+  //     if (max < matrix[i][j])
+  //       max = matrix[i][j];
+  //   }
+  // }
+  // return max;
 };
 
+// let max = matrix[0][0];
+// for (let i = 0; i <= matrix.length - 1; i++) {
+//   for (let j = 0; j <= matrix[i].length - 1; j++) {
+//     if (max < matrix[i][j])
+//       max = matrix[i][j];
+//   }
+// }
+// return max;
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -51,15 +70,13 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
-  let sum = 0;
-  for (let i = 0; i <= matrix.length - 1; i++) {
-    for (let j = 0; j <= matrix[i].length - 1; j++) {
-
-      sum = sum + matrix[i][j];
-
+  let acc=0;
+  matrix.map(item=>{
+    for(let i=0;i<item.length;i++){
+      acc=acc+item[i];
     }
-  }
-  return sum;
+  });
+  return acc;
 };
 
 
