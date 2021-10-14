@@ -1,6 +1,11 @@
 myarr=[1,2,3,4]
 
 def insertShiftArray(arr,b):
+    """
+    this function will remove an element from the middle index and shifts other elements in the array to fill the new gap.
+    input: array and a value
+    output: same array with the value added to its middle
+    """
     li=[b]
     a=len(arr)
     if a % 2==0:
