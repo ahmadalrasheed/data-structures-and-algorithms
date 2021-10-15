@@ -4,7 +4,7 @@ Write a function called BinarySearch which takes in 2 parameters: a sorted array
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![whiteboard](binarysearch.png)
+![whiteboard](../../binarysearch.png)
 
 
 ## Approach & Efficiency
