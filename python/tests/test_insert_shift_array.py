@@ -1,4 +1,6 @@
-from code_challenges.insertShiftArray.insert_shif_array import insertShiftArray
+
+from code_challenges.insertShiftArray.insertShiftArray import insertShiftArray
+
 
 
 def test_insert_Shift_Array():
@@ -6,3 +8,4 @@ def test_insert_Shift_Array():
     predicted=insertShiftArray(input_array,99)
     actual=[1,2,99,3,4]
     assert predicted==actual
+
