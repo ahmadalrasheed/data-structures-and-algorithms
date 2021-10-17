@@ -15,8 +15,8 @@ class Node:
 
   """
 
-  def __init__(self, data, next_ = None):
-    self.data = data
+  def __init__(self, value, next_ = None):
+    self.value = value
     self.next = next_
 
 class LinkedList:
@@ -37,6 +37,7 @@ class LinkedList:
     self.head = None
     self.current=self.head
 
+
   def insert(self, value):
     """"
     Insert creates a Node with the value that was passed and adds
@@ -53,23 +54,51 @@ class LinkedList:
 
 
   def includes (self,value):
+    """
+         Indicates whether that value exists  in a linked list
+         -----------------------
+        Arguments:
+        value: any
+        Return: Boolean(True or false)
+    """
     if self.head==None:
         return -1
     else:
         self.current=self.head
         while self.current:
-            if self.current.data==value:
+            if self.current.value==value:
+                print(f"Flag :{self.current.value} ")
                 return True
             else :
                 self.current=self.current.next
         return False
 
+  def __str__(self):
+        """
+        Returns a formatted string representing all the values in the Linked List.
+        Arguments:
+        None
+        Return: String Output
+        """
+        self.current = self.head
+
+        output = ""
+
+        while self.current != None:
+            print("PRINT", self.current.value)
+            output = output + (f"{ {self.current.value} } -> ")
+            self.current = self.current.next
+        output = output + "NULL"
+        return(output)
 # element1=Node(1)
 # print(type(element1).__name__)
-ll=LinkedList()
-inserted_value=ll.insert(1)
-print(inserted_value)
-inserted_value=ll.insert(3)
-print(inserted_value)
-check_if_include=ll.includes(3)
-print(check_if_include)
+if __name__=="__main__":
+
+    ll=LinkedList()
+    inserted_value=ll.insert(1)
+    print(inserted_value)
+    inserted_value=ll.insert(3)
+    print(inserted_value)
+    check_if_include=ll.includes(1)
+    print(check_if_include)
+    print(ll.__class__)
