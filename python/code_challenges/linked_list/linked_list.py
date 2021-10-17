@@ -92,6 +92,75 @@ class LinkedList:
         return(output)
 # element1=Node(1)
 # print(type(element1).__name__)
+
+
+  def append(self, value):
+        """
+        Adds a new node with the given value to the end of the list
+
+        ---------------
+        Arguments:
+        value: any
+        Return: None
+        """
+        self.current = self.head
+
+        while self.current != None:
+            if self.current.next == None:
+                self.current.next = Node(value)
+                break
+            self.current = self.current.next
+
+
+  def insert_before(self,value, new_value):
+        """
+        Adds a new node  immediately before the first node that has the value specified (input value).
+
+
+        -----------------
+        Arguments:
+        value: any
+        new_value: any
+        Return: None
+        """
+
+        self.current = self.head
+
+        while self.current.next != None:
+            if self.current.value == value:
+                self.insert(new_value)
+                break
+
+            if self.current.next.value == value:
+                self.current.next = Node(new_value, self.current.next)
+                break
+            self.current = self.current.next
+
+
+  def insert_after(self,value, new_value):
+        """
+        Adds a new node  immediately after the first node that has the value specified (input value)
+
+
+        -----------------------------
+        Arguments:
+        value: any
+        new_value: any
+        Return: None
+        """
+
+        self.current = self.head
+
+        while self.current != None:
+            if self.current.value == value:
+                self.current.next = Node(new_value, self.current.next)
+                break
+            self.current = self.current.next
+
+
+
+
+
 if __name__=="__main__":
 
     ll=LinkedList()
