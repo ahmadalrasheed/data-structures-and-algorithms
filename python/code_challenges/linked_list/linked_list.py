@@ -156,6 +156,31 @@ class LinkedList:
                 self.current.next = Node(new_value, self.current.next)
                 break
             self.current = self.current.next
+  def kth_From_End(self,k):
+        """
+        a function which is responsible for returning the k-th value from the end of a linked list.
+        it Return the node’s value that is k places from the tail of the linked list.
+
+
+        -----------------------------
+        Arguments:
+        k: int
+        Return: int if the method finds the value or 'Exception' if it doesn't find it
+        """
+        list_length=0
+        self.current=self.head
+        while self.current.next:
+            self.current=self.current.next
+            list_length+=1
+        self.current=self.head
+        while 0<=k<=list_length:
+            for item in range(list_length-k):
+                self.current=self.current.next
+            return self.current.value
+        return 'Exception'
+
+
+
 
 
 
@@ -168,6 +193,17 @@ if __name__=="__main__":
     print(inserted_value)
     inserted_value=ll.insert(3)
     print(inserted_value)
-    check_if_include=ll.includes(1)
-    print(check_if_include)
-    print(ll.__class__)
+    inserted_value=ll.insert(4)
+    print(inserted_value)
+    inserted_value=ll.insert(5)
+    print(inserted_value)
+    # check_if_include=ll.includes(1)
+    # print(check_if_include)
+    # print(ll.__class__)
+    ## 5---4-----3----1
+    calculate_kth=ll.kth_From_End(3)
+
+    print(calculate_kth)
+
+
+

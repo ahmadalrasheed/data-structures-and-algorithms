@@ -211,3 +211,75 @@ def test_link_insert_after_last():
 
     #Assert
     assert actual == expected
+
+# Where k is greater than the length of the linked list
+
+def test_kth_From_End_when_k_greater_than_lenght():
+    # arrange
+
+    ll = LinkedList()
+    ll.insert(0)
+    ll.insert(1)
+    ll.insert(5)
+    ll.insert(7)
+    expected = "Exception"
+
+    # Act
+    actual=ll.kth_From_End(6)
+    assert actual== expected
+# Where k and the length of the list are the same
+def test_kth_From_End_when_k_same_as_lenght():
+    # arrange
+
+
+    ll = LinkedList()
+    ll.insert(0)
+    ll.insert(1)
+    ll.insert(5)
+    ll.insert(7)
+    expected = "Exception"
+
+    # Act
+    actual=ll.kth_From_End(4)
+    assert actual== expected
+# Where k is not a positive integer
+def test_kth_From_End_when_k_is_negative():
+    # arrange
+
+
+    ll = LinkedList()
+    ll.insert(0)
+    ll.insert(1)
+    ll.insert(5)
+    ll.insert(7)
+    expected = "Exception"
+
+    # Act
+    actual=ll.kth_From_End(-1)
+    assert actual== expected
+# Where the linked list is of a size 1
+def test_kth_From_End_when_the_linked_list_of_size_one():
+    # arrange
+
+    ll = LinkedList()
+    ll.insert(7)
+    expected = 7
+
+    # Act
+    actual=ll.kth_From_End(0)
+    assert actual== expected
+# Happy Path” where k is not at the end, but somewhere in the middle of the linked list
+def test_kth_From_End_when_k_is_in_the_middle():
+    # arrange
+
+    ll = LinkedList()
+    ll.insert(9)
+    ll.insert(0)
+    ll.insert(1)
+    ll.insert(5)
+    ll.insert(7)
+    expected = 1
+
+    # Act
+    actual=ll.kth_From_End(2)
+    assert actual== expected
