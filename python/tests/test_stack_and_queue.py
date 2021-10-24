@@ -1,5 +1,5 @@
-from stack_and_queue.stack import Stack
-from stack_and_queue.queue import Queue
+from data_structure.stack_and_queue.stack import Stack
+from data_structure.stack_and_queue.queue import Queue
 
 import pytest
 

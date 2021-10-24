@@ -1,4 +1,4 @@
-from stack_and_queue.node import Node
+from data_structure.stack_and_queue.node import Node
 
 class EmptyStack(Exception):
     pass
