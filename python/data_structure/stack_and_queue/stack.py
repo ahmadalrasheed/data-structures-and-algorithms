@@ -1,4 +1,5 @@
-from data_structure.stack_and_queue.node import Node
+from node import Node
+# from data_structure.stack_and_queue.node import Node
 
 class EmptyStack(Exception):
     pass
@@ -55,6 +56,25 @@ class Stack():
         except AttributeError as err:
             raise err
 
+    def get_max(self,max_stack):
+        try:
+            max_num=max_stack.top
+            current=max_stack.top
+            while current.next:
+                if current.next.value>max_num.value:
+                    max_num=current.next
+                current=current.next
+            return max_num.value
+        except :
+            raise AttributeError('The stack is empty!!')
 
 
 
+if __name__=="__main__":
+    myobject=Stack()
+    myobject.push(1)
+    myobject.push(7)
+
+
+    myobject1=Stack()
+    print(myobject1.get_max(myobject))
