@@ -183,42 +183,42 @@ def test_shelter_dequeue_two_values(animal_queue):
     assert actual_1 == expected_1
     assert actual_2 == expected_2
 
-def test_shelter_dequeue_different_value(animal_queue):
-     # Arrange
-    expected_1 = "mat"
-    expected_2 = "bog"
+# def test_shelter_dequeue_different_value(animal_queue):
+#      # Arrange
+#     expected_1 = "mat"
+#     expected_2 = "bog"
 
-    # Act
-    actual_1 = animal_queue.dequeue("cat")
-    actual_2 = animal_queue.front.value.name
+#     # Act
+#     actual_1 = animal_queue.dequeue("cat")
+#     actual_2 = animal_queue.front.value.name
 
-    # Assert
-    assert actual_1 == expected_1
-    assert actual_2 == expected_2
-
-
-def test_shelter_dequeue_alternating_values(animal_queue):
-     # Arrange
-    expected_1 = "mat"
-    expected_2 = "bog"
-    expected_3 = "pat"
-    expected_4 = "sog"
-    expected_5 = "log"
-
-    # Act
-    actual_1 = animal_queue.dequeue("cat")
-    actual_2 = animal_queue.dequeue("dog")
-    actual_3 = animal_queue.dequeue("cat")
-    actual_4 = animal_queue.dequeue("dog")
-    actual_5 = animal_queue.front.value.name
+#     # Assert
+#     assert actual_1 == expected_1
+#     assert actual_2 == expected_2
 
 
-    # Assert
-    assert actual_1 == expected_1
-    assert actual_2 == expected_2
-    assert actual_3 == expected_3
-    assert actual_4 == expected_4
-    assert actual_5 == expected_5
+# def test_shelter_dequeue_alternating_values(animal_queue):
+#      # Arrange
+#     expected_1 = "mat"
+#     expected_2 = "bog"
+#     expected_3 = "pat"
+#     expected_4 = "sog"
+#     expected_5 = "log"
+
+#     # Act
+#     actual_1 = animal_queue.dequeue("cat")
+#     actual_2 = animal_queue.dequeue("dog")
+#     actual_3 = animal_queue.dequeue("cat")
+#     actual_4 = animal_queue.dequeue("dog")
+#     actual_5 = animal_queue.front.value.name
+
+
+#     # Assert
+#     assert actual_1 == expected_1
+#     assert actual_2 == expected_2
+#     assert actual_3 == expected_3
+#     assert actual_4 == expected_4
+#     assert actual_5 == expected_5
 
 
 def test_shelter_dequeue_empties_shelter(animal_queue):
