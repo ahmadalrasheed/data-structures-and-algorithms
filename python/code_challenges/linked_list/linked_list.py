@@ -1,5 +1,4 @@
 
-
 class Node:
   """
   A class representing a Node
@@ -187,42 +186,12 @@ class LinkedList:
         while temp != None:
             output=output+f' {temp.value} ->'
             temp = temp.next
-        print(output)
+        return(output)
 
     # Main function that inserts nodes of linked list q into p at alternate positions.
     # Since head of first list never changes
     # but head of second list/ may change,
     # we need single pointer for first list and double pointer for second list.
-  def zip_Lists(self, list1, list2):
-        """
-        Returns the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the head of the zipped list.
-        Arguments:
-        list1: LinkedList
-        list2: LinkedList
-        Return: LinkedList
-        """
-        zip_list=LinkedList()
-        list1_curr = list1.head
-        list2_curr = list2.head
-
-        # swap their positions until one finishes off
-        while list1_curr != None or list2_curr != None:
-
-            # Save next pointers
-            list1_next = list1_curr.next
-            list2_next = list2_curr.next
-
-            # make q_curr as next of p_curr
-            list2_curr.next = list1_next  # change next pointer of q_curr
-            list1_curr.next = list2_curr  # change next pointer of p_curr
-
-            # update current pointers for next iteration
-            zip_list.insert(list1_curr)
-            zip_list.insert(list2_curr)
-            list1_curr = list1_next
-            list2_curr = list2_next
-            list2.head = list2_curr
-        return zip_list.printList()
 
 
 
