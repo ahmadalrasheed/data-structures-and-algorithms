@@ -1,3 +1,4 @@
+from code_challenges.pseudoqueue.PseudoQueue import PseudoQueue
 from data_structure.stack_and_queue.stack import Stack
 from data_structure.stack_and_queue.queue import Queue
 
@@ -122,6 +123,65 @@ def test_dequeue_and_peek_on_emty_queue_raise_exeption():
     assert actual==expected
 
 
+
+# ---------------------------------------------------------------
+# PseudoQueue tests
+
+
+def test_pseudo_queue_enqueue_value(pseudo_queue_1):
+     # Arrange
+    expected = "Test_Value_1"
+
+    # Act
+    actual = pseudo_queue_1.front.value
+
+    # Assert
+    assert actual == expected
+
+
+def test_pseudo_queue_enqueue_multiple(pseudo_queue_5):
+     # Arrange
+    expected_1 = "Test_Value_1"
+    expected_2 = "Test_Value_2"
+
+    # Actpseudo_queue_5
+    actual_1 = pseudo_queue_5.front.value
+    actual_2 = pseudo_queue_5.front.next.value
+
+    # Assert
+    assert actual_1 == expected_1
+    assert expected_2 == actual_2
+
+
+def test_pseudo_queue_dequeue_value(pseudo_queue_5):
+     # Arrange
+    expected = "Test_Value_1"
+
+    # Act
+    actual = pseudo_queue_5.dequeue()
+
+    # Assert
+    assert actual == expected
+
+
+def test_pseudo_queue_dequeue_multiple(pseudo_queue_5):
+     # Arrange
+    expected = True
+
+    # Act
+    pseudo_queue_5.dequeue()
+    pseudo_queue_5.dequeue()
+    pseudo_queue_5.dequeue()
+    pseudo_queue_5.dequeue()
+    pseudo_queue_5.dequeue()
+
+
+    # Assert
+    with pytest.raises(Exception):
+        assert pseudo_queue_5.dequeue()
+
+        # ---------------------------------------------------
+
 @pytest.fixture
 def My_Queue():
     myobject=Queue()
@@ -140,3 +200,23 @@ def my_stack():
     myobject.push(7)
     return myobject
 
+@pytest.fixture
+def pseudo_queue_0():
+    pseudo = PseudoQueue()
+    return pseudo
+
+@pytest.fixture
+def pseudo_queue_1():
+    pseudo = PseudoQueue()
+    pseudo.enqueue("Test_Value_1")
+    return pseudo
+
+@pytest.fixture
+def pseudo_queue_5():
+    pseudo = PseudoQueue()
+    pseudo.enqueue("Test_Value_1")
+    pseudo.enqueue("Test_Value_2")
+    pseudo.enqueue("Test_Value_3")
+    pseudo.enqueue("Test_Value_4")
+    pseudo.enqueue("Test_Value_5")
+    return pseudo
