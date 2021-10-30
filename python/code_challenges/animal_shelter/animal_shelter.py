@@ -1,143 +1,63 @@
 from data_structure.stack_and_queue.node  import Node
 # from node  import Node
 
-
-class Animal:
-    """
-    creates Animals objects.
-
-    -----------------------
-     Arguments:
-     name : str
-     specie : str
-    """
-    def __init__(self, name, specie, next_ = None):
-        self.name = name
-        self.specie = specie
-        self.next = next_
-
-
-class Cat(Animal):
-    """
-    Cat class creates Cats.
-
-
-    --------------
-     Arguments:
-     name : str
-    """
-    def __init__(self, name):
-        super().__init__(name, specie = "cat")
-
-
-
-class Dog(Animal):
-    """
-    Dog class creates Dogs.
-
-
-    --------------------
-     Arguments:
-     name : str
-    """
-    def __init__(self, name):
-        super().__init__(name, specie = "dog")
-
-
 class AnimalShelter:
-    """
-    AnimalShelter class queues cats and dogs.
-
-    ----------------------
-     Arguments:
-     front: Node
-     back: Node
-    """
-
-
-    def __init__(self, front = None, back = None):
-        self.front = front
-        self.back = back
-
-
-    def enqueue(self, animal:Animal):
-        """
-        This method adds a Cat/Dog object to the AnimalShelter queue.
-        Arguments:
-
-
-        -------------
-        animal: Cat or Dog object
-        """
-        if animal.specie == "dog" or animal.specie == "cat":
+    def __init__(self,front=None,rear=None):
+            self.front=front
+            self.rear=rear
+    def enqueue(self,animal):
+        if animal.__class__.__name__=='Dog' or animal.__class__.__name__=='Cat':
             if not self.front:
-                self.front = Node(animal)
-                self.back = self.front
-            else:
-                self.back.next = Node(animal)
-                self.back = self.back.next
-        else:
-            print("Shelter can only take in cats and dogs.")
-            return False
+                self.front=Node(animal.animal_name)
+                self.rear=self.front
+            else :
+                self.rear.next=Node(animal.animal_name)
+                self.rear=self.rear.next
 
-
-    def dequeue(self, pref):
-        """
-        This method removes a Cat/Dog object to the AnimalShelter queue.
-
-        --------------------------
-        Arguments:
-        pref : Cat or Dog object
-        Return: Dequeued object / None
-        """
-        if pref == "dog" or pref == "cat":
-
+    def dequeue(self,pref):
+        trash=''
+        if pref.__class__.__name__=='Dog' or pref.__class__.__name__=='Cat':
+            temp=self.front
+            prev=self.front
             if not self.front:
-                raise Exception("Queue is empty.")
+                raise Exception('The queue is empty')
+            if pref.animal_name.lower() == self.front.value:
+                temp=self.front
+                self.front=self.front.next
+                temp.next=0
+                return temp.value
+            counter=0
+            while temp.value != pref.animal_name.lower():
+                temp=temp.next
+                counter+=1
+            for _ in range(counter-1):
+                prev=prev.next
+            trash=temp.value
+            prev.next=temp.next
+            temp.next=None
+        return trash
+    def print_queue(self):
+        current=self.front
+        output=''
+        while current:
+            output+=f' {current.value}-> '
+            current=current.next
+        return output
 
 
 
-            if pref == self.front.value.specie:
-                Trash = self.front
-                self.front = self.front.next
-                Trash.next = None
 
 
-
-            return Trash.value.name
-
-
-
-        else:
-            print("Shelter has only cats and dogs.")
-            return None
+class Dog:
+    def __init__(self,animal_name='dog'):
+        self.animal_name=animal_name
 
 
+class Cat:
+    def __init__(self,animal_name='cat'):
+        self.animal_name=animal_name
 
+class Lion:
+    def __init__(self,animal_name='lion'):
+        self.animal_name=animal_name
 
-# if __name__ == '__main__':
-#     shelter = AnimalShelter()
-#     dog = Dog("dog")
-#     cat = Cat("cat")
-
-#     mat = Cat("mat")
-#     pat = Cat("pat")
-#     bog = Dog("bog")
-#     sog = Dog("sog")
-
-#     shelter.enqueue(mat)
-#     shelter.enqueue(dog)
-#     shelter.enqueue(bog)
-#     shelter.enqueue(sog)
-#     shelter.enqueue(cat)
-#     shelter.enqueue(pat)
-
-#     print("before", shelter.front.value.name)
-#     print("before", (shelter.front.next).value.name)
-#     print("before", (shelter.front.next).next.value.name)
-
-#     shelter.dequeue("dog")
-
-#     print("after", (shelter.front.value.name))
-#     print("after", (shelter.front.next).value.name)
-#     print("after", (shelter.front.next).next.value.name)
