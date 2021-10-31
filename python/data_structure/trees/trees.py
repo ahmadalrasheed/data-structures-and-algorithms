@@ -27,6 +27,7 @@ class BinaryTree:
 
   def __init__(self):
     self.root = None
+    self.max_value=0
 
   def bfs(self):
     """
@@ -112,6 +113,28 @@ class BinaryTree:
 
     walk(self.root)
     return list_of_items
+
+  def max(self):
+      """
+        A function That find the maximum value in a tree.
+
+        -------------
+        arguments:None
+        return : Number
+      """
+
+      def walk(node,max_value):
+        if node:
+          if node.data>max_value:
+                self.max_value=node.data
+          if node.left:
+            walk(node.left,max_value)
+          if node.right:
+            walk(node.right,max_value)
+
+      walk(self.root,self.max_value)
+      return self.max_value
+
 
 
 # -----------------------------------

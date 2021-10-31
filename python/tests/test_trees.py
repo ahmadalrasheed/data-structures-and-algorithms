@@ -275,6 +275,34 @@ def test_bs_add_empty():
 
     #Assert
     assert actual == expected
+# ------------------------------
+# tests for max function in binary tree
+
+def test_max_in_binary_tree(binary_tree):
+    #Arrange
+    tree = binary_tree
+    expected = 80
+
+    #Act
+    actual=tree.max()
+
+
+    #Assert
+    assert actual == expected
+
+
+def test_max_for_empty_tree():
+    #Arrange
+    tree = BinaryTree()
+    expected = 0
+
+    #Act
+    actual=tree.max()
+
+
+    #Assert
+    assert actual == expected
+
 
 
 @pytest.fixture
@@ -314,3 +342,41 @@ def bs_tree():
     bs_tree.root = node50
 
     return bs_tree
+
+@pytest.fixture
+def binary_tree():
+
+    node50 = Node(50)
+
+    node45 = Node(45)
+    node40 = Node(40)
+    node35 = Node(35)
+    node30 = Node(30)
+    node20 = Node(20)
+
+    node80 = Node(80)
+    node70 = Node(70)
+    node65 = Node(65)
+    node60 = Node(60)
+    node55 = Node(55)
+
+
+    node50.left = node40
+    node50.right = node60
+
+    node40.left = node30
+    node40.right = node45
+
+    node30.left = node20
+    node30.right = node35
+
+    node60.left = node55
+    node60.right = node70
+
+    node70.left = node65
+    node70.right = node80
+
+    tree = BinaryTree()
+    tree.root = node50
+
+    return tree
