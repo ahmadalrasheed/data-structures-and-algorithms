@@ -18,6 +18,12 @@ Create a Node class that has properties for the value stored in the node, the le
 * O time complexity for (post_order): O(n)
 
 
+## whiteboard for Code Challenge: Class 17
+
+![code17](../../codechallenege17.png)
+
+
+
 
 ## API
 <!-- Description of each method publicly available in each of your trees -->
@@ -56,4 +62,12 @@ Create a Node class that has properties for the value stored in the node, the le
     input: None
 
     output: tree items
+    """
+
+
+
+>breadth_first"""
+    A binary tree method which returns a list of items that it contains
+    Arguments: tree
+    Return: list of all values in the tree, in the order they were encountered
     """

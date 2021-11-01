@@ -223,6 +223,39 @@ class LinkedList:
             list2_curr = list2_next
             list2.head = list2_curr
         return zip_list.printList()
+#   def reverse_ll_k_times(self,ll,k):
+#         ll_length=0
+#         ll_head=ll.head
+#         self.current=ll_head
+#         while(self.current):
+#             ll_length+=1
+#             self.current=self.current.next
+#         indicator=ll_length-k
+#         self.current=ll_head
+#         current_copy=self.current
+
+#         counter=0
+#         while(self.current):
+#             k_copy=k
+
+
+#             while(counter<k_copy and indicator>0):
+#                 counter+=1
+
+#                 if(self.current == ll_head):
+#                     self.current=self.current.next
+#                     current_copy=current_copy.next
+#                     self.current.next=ll_head
+#                     ll_head=self.current
+#                     self.current=self.current.next
+#                     current_copy=current_copy.next
+#                 else:
+#                     self.current=self.current.next
+#                     current_copy=current_copy.next
+#                     self.current.next=current_copy
+#                     self.current=current_copy
+#         return ll.printList()
+
 
 
 
