@@ -285,17 +285,17 @@ def test_kth_From_End_when_k_is_in_the_middle():
     assert actual== expected
 
 
-def test_k_time_reverse():
-    # arrange
+# def test_k_time_reverse():
+#     # arrange
 
-    ll = LinkedList()
-    ll.insert(9)
-    ll.insert(0)
-    ll.insert(1)
-    ll.insert(5)
-    ll.insert(7)
-    expected = ' 1 -> 5 -> 7 -> 0 -> 9 ->'
+#     ll = LinkedList()
+#     ll.insert(9)
+#     ll.insert(0)
+#     ll.insert(1)
+#     ll.insert(5)
+#     ll.insert(7)
+#     expected = ' 1 -> 5 -> 7 -> 0 -> 9 ->'
 
-    # Act
-    actual=ll.reverse_ll_k_times(ll,3)
-    assert actual== expected
+#     # Act
+#     actual=ll.reverse_ll_k_times(ll,3)
+#     assert actual== expected
