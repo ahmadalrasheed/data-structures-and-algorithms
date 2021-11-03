@@ -52,3 +52,21 @@ def test_breadth_first2():
     # assert actual is same as expected
     assert actual == expected
 
+
+def test_breadth_first3():
+    # Arrange
+    # Create tree instance
+    tree = BinaryTree()
+
+    # Create Nodes for A,B,C,D
+    tree.root=Node(1)
+
+    # Add Root node to tree
+
+
+    # set expected list
+    expected = [1]
+    # set actual to return data of bfs call
+    actual = breadth_first(tree)
+    # assert actual is same as expected
+    assert actual == expected

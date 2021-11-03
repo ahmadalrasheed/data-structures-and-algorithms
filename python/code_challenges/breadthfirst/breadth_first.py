@@ -9,6 +9,7 @@ def breadth_first(tree):
     Return: list of all values in the tree, in the order they were encountered
     """
     # Queue breadth <-- new Queue()
+    
     breadth = Queue()
     # breadth.enqueue(root)
     my_node=tree.root
