@@ -56,31 +56,6 @@ class BinaryTree:
 
     return list_of_items
 
-  def breadth_first(self,tree):
-    """
-    A binary tree method which returns a list of items that it contains
-
-    Arguments: tree
-    Return: list of all values in the tree, in the order they were encountered
-    """
-    # Queue breadth <-- new Queue()
-    breadth = Queue()
-    # breadth.enqueue(root)
-    breadth.enqueue(tree.root)
-
-    list_of_items = []
-
-    while breadth.peek():
-      front = breadth.dequeue()
-      list_of_items += [front.data]
-
-      if front.left:
-        breadth.enqueue(front.left)
-
-      if front.right:
-        breadth.enqueue(front.right)
-
-    return list_of_items
 
   def pre_order(self):
     """

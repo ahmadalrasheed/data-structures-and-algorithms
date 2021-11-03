@@ -66,8 +66,3 @@ Create a Node class that has properties for the value stored in the node, the le
 
 
 
->breadth_first"""
-    A binary tree method which returns a list of items that it contains
-    Arguments: tree
-    Return: list of all values in the tree, in the order they were encountered
-    """
