@@ -1,4 +1,13 @@
 def quick_sort(left, right, arr):
+    """
+     Function that takes the first and last index of an array and the array itself and returns the array sorted
+     argumnets:
+     left=>int
+     right=>int
+     arr=>array
+
+     Output=>sorted array
+    """
 
     if (left < right):
         p = partition(left, right, arr)
