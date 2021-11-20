@@ -1,33 +1,67 @@
-def Mergesort(arr):
+"""This module contains Merge Sort algorithm"""
+
+
+
+def merge_sort(arr):
+    """
+    merge_sort function sorts list items in an ascending order, based on their values.
+    Arguments:
+        arr: list of integers
+    Return:
+        Modified list
+    """
     n = len(arr)
 
-    if n > 1 :
-        mid = n/2
-        left = arr[0:mid]
-        right  = arr[mid:n]
-    # sort the left side
-        Mergesort(left)
-    # sort the right side
-        Mergesort(right)
-    # merge the sorted left and right sides together
-        Merge(left, right, arr)
+    if n >1:
+        mid = n//2
+        left = arr[:mid]
+        right = arr[mid:]
 
-def Merge(left, right, arr):
+        merge_sort(left)
+
+        merge_sort(right)
+
+        merge(left, right, arr)
+
+    return arr
+
+
+
+def merge(left, right, arr):
+    """
+    merge function merges three lists into one in ascending order, based on their values.
+    Arguments:
+        left: list of integers
+        right: list of integers
+        arr: list of integers
+    Return:
+        None
+    """
     i = 0
     j = 0
     k = 0
 
-    while i < len(left) and j < len(right):
+    while i <len(left) and j< len(right):
         if left[i] <= right[j]:
-                arr[k] = left[i]
-                i = i + 1
+            arr[k] = left[i]
+            i += 1
+
         else:
-                arr[k] = right[j]
-                j = j + 1
+            arr[k] = right[j]
+            j += 1
 
-        k = k + 1
+        k += 1
 
-    # if i == len(left):
-    #    set remaining entries in arr to remaining values in right
-    # else:
-    #    set remaining entries in arr to remaining values in left
+    while i < len(left):
+        arr[k] = left[i]
+        k += 1
+        i += 1
+
+    while j < len(right):
+        arr[k] = right[j]
+        k += 1
+        j += 1
+
+
+
+
