@@ -17,6 +17,9 @@ Time comlexity for _hash function : O(1)
 space comlexity for _hash function : O(1)
 Time comlexity for insert method : O(1)
 space comlexity for insert method : O(1)
+Time comlexity for contains method : O(1)
+space comlexity for contains method : O(1)
+
 
 
 ## API
@@ -42,6 +45,16 @@ space comlexity for insert method : O(1)
 
 >insert method for linkedlist :       """
         Take a value and store it in a Node, then insert it to the beginning of the linked list.
+        """
+
+
+
+>contains"""
+        Method Indicating if the key exist in the hash map or not
+
+        arguments:
+        input->string
+        output->boolean
         """
 
 

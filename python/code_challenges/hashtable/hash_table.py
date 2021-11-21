@@ -80,8 +80,19 @@ class HashTable:
 
       # return None
       return None
+    def contains(self,key):
+        """
+        Method Indicating if the key exist in the hash map or not
+
+        arguments:
+        input->string
+        output->boolean
+        """
+        index = self.__hash(key)
+        if self.__buckets[index]:
+            return True
+        return False
 
 
 
 
-        

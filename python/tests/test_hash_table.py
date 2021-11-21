@@ -78,6 +78,32 @@ def test_result_of_hashing_is_in_range_value(hashtable):
     assert actual4 <= expected
 
 
+def test_contains(hashtable):
+    #actual
+    my_object=hashtable
+
+
+    my_object.add('d',8)
+    my_object.add('hdgd',10)
+    my_object.add('kskjhshs',600)
+
+    actual1 =my_object.contains('d')
+    actual2 =my_object.contains('hdgd')
+    actual3 =my_object.contains('kskjhshs')
+
+
+    #expected
+    expected1 = True
+    expected2 = True
+    expected3 = True
+
+    #assert
+    assert actual1 == expected1
+    assert actual2 == expected2
+    assert actual3 == expected3
+
+
+
 
 
 
