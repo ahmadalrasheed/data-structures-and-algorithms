@@ -2,6 +2,9 @@
 <!-- Short summary or background information -->
 A graph is a non-linear data structure that can be looked at as a collection of vertices (or nodes) potentially connected by line segments named edges.
 
+## White Board For Breadth first
+![](../../graphbreadthfirst.png)
+
 ## Challenge
 <!-- Description of the challenge -->
 Implement your own Graph. The graph should be represented as an adjacency list, and should include the following methods:
@@ -10,6 +13,7 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
 * get nodes
 * get neighbors
 * size
+* breadth first
 
 
 
@@ -25,8 +29,9 @@ Time comlexity for get_nodes : O(1)
 space comlexity for get_nodes : O(1)
 Time comlexity for get_neighbors : O(1)
 space comlexity for get_neighbors : O(1)
-Time comlexity for breadth_first_search : O(N)
-space comlexity for breadth_first_search : O(N)
+Time complextiy for graph breadth_first_search: O(n^2)
+space complexity for graph breadth_first_search: O(n^2)
+
 
 
 
@@ -61,8 +66,12 @@ space comlexity for breadth_first_search : O(N)
      """
 
 
->breadth_first_search"""
-    method to apply breadth firts traversal to the graph
+>breadth_first_search>"""
+    breadth_first_search
+    This method traverses a graph in breadth first order performing an action on each vertex.
+    Arguments:
+    start_vertex: Vertex
+    Return: collection of nodes
     """
 
 

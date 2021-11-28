@@ -15,17 +15,17 @@ class Vertex:
     self.value = value
 
 class Queue:
-  def __init__(self):
-    self.dq = deque()
+    def __init__(self):
+        self.dq = deque()
 
-  def enqueue(self, value):
-    self.dq.appendLeft(value)
+    def __len__(self):
+        return len(self.dq)
 
-  def dequeue(self):
-    self.dq.pop()
+    def enqueue(self, value):
+        self.dq.append(value)
 
-  def __len__(self):
-    return len(self.dq)
+    def dequeue(self):
+        return self.dq.popleft()
 
 
 class Stack:
@@ -115,28 +115,41 @@ class Graph:
      """
     return self.__adjacency_list.get(vertex, [])
 
-  def breadth_first_search(self, start_vertex, action=(lambda vertex: None)):
-    """
-    method to apply breadth firts traversal to the graph
-    """
-    queue = Queue()
-    visited = set()
+  def breadth_first_search(self, start_vertex):
+        """
+        breadth_first_search
+        This method traverses a graph in breadth first order performing an action on each vertex.
+        Arguments:
+        start_vertex: Vertex
+        action: collection of nodes
+        """
+        try:
+            vertices= []
+            queue = Queue()
+            visited = set()
 
-    queue.enqueue(start_vertex)
-    visited.add(start_vertex)
+            queue.enqueue(start_vertex)
+            visited.add(start_vertex)
 
-    while len(queue):
-      current_vertex = queue.dequeue()
-      action(current_vertex)
+            while len(queue):
 
-      neighbors = self.get_neigbors(current_vertex)
+                current_vertex = queue.dequeue()
 
-      for edge in neighbors:
-        neighbor =  edge.vertex
+                vertices +=  [current_vertex.value]
 
-        if neighbor not in visited:
-          visited.add(neighbor)
-          queue.enqueue(neighbor)
+                neighbors = self.get_neighbors(current_vertex)
+                for edge in neighbors:
+                    neighbor = edge.vertex
+
+                    if neighbor not in visited:
+                        visited.add(neighbor)
+
+                        queue.enqueue(neighbor)
+
+            return vertices
+
+        except:
+            raise Exception("Pease check your inputs and try again.")
 
 
 
