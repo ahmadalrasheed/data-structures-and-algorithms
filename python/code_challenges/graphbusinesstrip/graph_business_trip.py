@@ -10,23 +10,29 @@ def business_trip(graph, array):
         array: an array containing destinations
     Return: Str, the cost or None
     """
-    try:
-        cost = 0
+    price = 0
+    cost=0
+    if len(array) >=2:
         for city in range(len(array)):
-            edges = graph.get_neighbors(array[city])
+            city_to_check=array[city]
+            neighbors=graph.get_neighbors(city_to_check)
 
-            if city + 1 <= len(array) -1:
+            if city+2 > len(array):
+                return  f'${price}'
+            cost=price
 
-                cost_check = cost
+            for neighbor in neighbors:
 
-                for neighbor in edges:
-                    if array[city + 1] == neighbor.vertex:
-                        cost += neighbor.weight
+                if neighbor.vertex == array[city+1]:
+                    price+=neighbor.weight
 
-                if cost == cost_check:
-                    return None
+            if price==cost:
+                return None
 
-        return f'${cost}'
 
-    except:
-        raise Exception("Please check your inputs and try again.")
+
+
+
+
+
+
