@@ -35,6 +35,11 @@ class Stack:
 		"""
     self.dq = deque()
 
+
+  def __len__(self):
+    return len(self.dq)
+
+
   def push(self, value):
     """
 		Store the passed value in a node and then push the node on top of the stack.
@@ -150,6 +155,32 @@ class Graph:
 
         except:
             raise Exception("Pease check your inputs and try again.")
+  def depth_first(self,Node):
+      """
+      This function displays the preorder traversal of a graph.
+      arguments:Node(starting node)
+      return:collection of nodes
+      """
+      try:
+        result=''
+        visited=set()
+        def walk(node , visited):
+            nonlocal result
+            visited.add(node)
+            result += f'{node.value},'
+            for neighbor in self.get_neighbors(node):
+                    if neighbor.vertex not in visited:
+                        walk(neighbor.vertex,visited)
+        walk(Node , visited)
+        return result
+      except:
+          raise Exception('Error in your input!')
+
+
+
+
+
+
 
 
 

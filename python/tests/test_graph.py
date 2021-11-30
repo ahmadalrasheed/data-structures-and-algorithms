@@ -137,6 +137,41 @@ def test_breadth_first_search_empty():
     with pytest.raises(Exception):
         assert graph.breadth_first_search(graph)
 
+
+
+# -----------------------------------------------
+# TEST DEPTH FIRST
+
+
+def test_depth_first(depth_first):
+    #Arrange
+    expected = 'A,B,C,G,D,E,H,F,'
+
+    # actual
+
+    actual = depth_first[0].depth_first(depth_first[1])
+    assert actual == expected
+
+def test_depth_first_one_node_graph():
+    #Arrange
+    expected = 'None,'
+    graph = Graph()
+    empty=graph.add_node(None)
+
+    # actual
+
+    actual = graph.depth_first(empty)
+    assert actual == expected
+
+
+def test_depth_first_empty(depth_first):
+    #Arrange
+    graph = Graph()
+
+    # actual
+    with pytest.raises(Exception):
+        assert graph.depth_first(graph)
+
 # Fixtures
 # ------------------------------------------------
 @pytest.fixture
@@ -198,3 +233,48 @@ def example_graph():
     graph.add_edge(naboo, narnia)
 
     return graph, pandora
+
+@pytest.fixture()
+def depth_first():
+
+    graph =Graph()
+    anode=graph.add_node('A')
+    bnode=graph.add_node('B')
+    dnode=graph.add_node('D')
+    fnode=graph.add_node('F')
+    cnode=graph.add_node('C')
+    enode=graph.add_node('E')
+    hnode=graph.add_node('H')
+    gnode=graph.add_node('G')
+
+    graph.add_edge(anode,bnode)
+    graph.add_edge(bnode,anode)
+
+    graph.add_edge(bnode,cnode)
+    graph.add_edge(cnode,bnode)
+
+    graph.add_edge(bnode,dnode)
+    graph.add_edge(dnode,bnode)
+
+    graph.add_edge(cnode,gnode)
+    graph.add_edge(gnode,cnode)
+
+    graph.add_edge(anode,dnode)
+    graph.add_edge(dnode,anode)
+
+    graph.add_edge(dnode,enode)
+    graph.add_edge(enode,dnode)
+
+    graph.add_edge(dnode,hnode)
+    graph.add_edge(hnode,dnode)
+
+    graph.add_edge(dnode,fnode)
+    graph.add_edge(fnode,dnode)
+
+    graph.add_edge(hnode,fnode)
+    graph.add_edge(fnode,hnode)
+
+
+    return graph, anode
+
+

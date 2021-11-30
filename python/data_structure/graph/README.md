@@ -5,6 +5,10 @@ A graph is a non-linear data structure that can be looked at as a collection of 
 ## White Board For Breadth first
 ![](../../graphbreadthfirst.png)
 
+
+## White Board for Depth First
+![](../../graphdepthfirst.png)
+
 ## Challenge
 <!-- Description of the challenge -->
 Implement your own Graph. The graph should be represented as an adjacency list, and should include the following methods:
@@ -14,6 +18,7 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
 * get neighbors
 * size
 * breadth first
+* depth_first
 
 
 
@@ -31,6 +36,8 @@ Time comlexity for get_neighbors : O(1)
 space comlexity for get_neighbors : O(1)
 Time complextiy for graph breadth_first_search: O(n^2)
 space complexity for graph breadth_first_search: O(n^2)
+Time complextiy for graph depth_first: O(n*log(n))
+space complexity for graph depth_first: O(n)
 
 
 
@@ -73,6 +80,12 @@ space complexity for graph breadth_first_search: O(n^2)
     start_vertex: Vertex
     Return: collection of nodes
     """
+
+>depth_first"""
+      This function displays the preorder traversal of a graph.
+      arguments:Node(starting node)
+      return:collection of nodes
+      """
 
 
 
